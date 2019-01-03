@@ -31,24 +31,18 @@ public class DeScanSwapSort {
 				
 				if (i <= j) {
 					// 交换
-					swap(items, i, j);
+					Utils.swap(items, i, j);
 				}
 			}
 			
 			// 本轮结束了，交换轴点
-			swap(items, start, j);
+			Utils.swap(items, start, j);
 			
 			sysArr(items);
 			
 			deScanSwapSort(items, start, j - 1);
 			deScanSwapSort(items, j + 1, items.length - 1);
 		}
-	}
-	
-	private void swap(int[] items, int i, int j) {
-		int temp = items[i] ;
-		items[i] = items[j] ;
-		items[j] = temp ;
 	}
 	
 	public void sysArr(int[] items) {
